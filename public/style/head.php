@@ -9,37 +9,37 @@
             <nav>
                 <ul class="nav-list">
 
-                    <?php if($page === '/') {
+                    <?php if ($page === '/') {
                         echo '<li> <a href="/" class="active"> Home Page </a> </li>';
-                    }else {
+                    } else {
                         echo '<li> <a href="/"> Home Page </a> </li>';
                     }
                     ?>
 
-                    <?php if($page === '/profile') {
+                    <?php if ($page === '/profile') {
                         echo '<li> <a href="/profile" class="active"> Profile </a> </li>';
-                    }else {
+                    } else {
                         echo '<li> <a href="/profile"> Profile </a> </li>';
                     }
                     ?>
 
-                    <?php if($page === '/dashboard') {
+                    <?php if ($page === '/dashboard') {
                         echo '<li> <a href="/dashboard" class="active"> Dashboard </a> </li>';
-                    }else {
+                    } else {
                         echo '<li> <a href="/dashboard"> Dashboard </a> </li>';
                     }
                     ?>
 
-                    <?php if($page === '/faq') {
+                    <?php if ($page === '/faq') {
                         echo '<li> <a href="/faq" class="active"> FAQ </a> </li>';
-                    }else {
+                    } else {
                         echo '<li> <a href="/faq"> FAQ </a> </li>';
                     }
                     ?>
 
-                    <?php if($page === '/blog') {
+                    <?php if ($page === '/blog') {
                         echo '<li> <a href="/blog" class="active"> Blog </a> </li>';
-                    }else {
+                    } else {
                         echo '<li> <a href="/blog"> Blog </a> </li>';
                     }
                     ?>
