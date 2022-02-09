@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{DashboardController,ProfileController,WelcomeController,FaqController,BlogController};
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,29 @@ Route::get('/posts/{post}', function ($post) {
     ]);
 });
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [WelcomeController::class, 'show']);
+Route::get('/profile', [ProfileController::class, 'show']);
+Route::get('/dashboard', [DashboardController::class, 'show']);
+Route::get('/faq', [FaqController::class, 'show']);
+Route::get('/blog', [BlogController::class, 'show']);
+
+// blog posts view
+Route::get('/blog/{blog}', function($blog) {
+   $blogs = [
+       'changes-after-pitch',
+       'article-section',
+       'first-feedback',
+       'ict-field-of-work',
+       'personal-swot-analysis',
+       'programming-experience',
+       'study-choice'
+
+   ];
+
+    if (array_search($blog, $blogs) === null) {
+        abort(404, 'Sorry, that blog was not found.');
+    }
+
+    return view($blog);
+
 });
