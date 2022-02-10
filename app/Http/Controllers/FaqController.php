@@ -1,5 +1,6 @@
 <?php
 namespace App\http\Controllers;
+
 use App\Models\Faq;
 
 class FaqController
@@ -9,7 +10,7 @@ class FaqController
      */
     public function show()
     {
-        //$questions = Faq::all();
-        return view('faq',['questions'=>Faq::all()]);
+        // $questions = Faq::all();
+        return view('faq', ['questions'=>Faq::all()]);
     }
 }
