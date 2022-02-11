@@ -9,6 +9,9 @@ class Assignment extends Model
 {
     use HasFactory;
 
+    /**
+     * This function changes the assingments to complete
+     */
     public function complete()
     {
         $this->completed = true;

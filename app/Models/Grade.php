@@ -9,21 +9,17 @@ class Grade extends Model
 {
     use HasFactory;
 
+    /**
+     * This function adds a new result to the grade if the conditons are met
+     */
     public function addResult($newGrade)
     {
-        if ($this->best_grade < $newGrade)
-        {
+        if ($this->best_grade < $newGrade) {
             $this->best_grade=$newGrade;
-
-        if($this->best_grade >= 5.5)
-        {
-            $this->passed_at = now();
-        } else
-        {
-            $this->passed_at = null;
+            if ($this->best_grade >= 5.5) {
+               $this->passed_at = now();
+             }
         }
-
         $this->save();
-        }
     }
 }
