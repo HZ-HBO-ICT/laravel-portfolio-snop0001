@@ -1,34 +1,15 @@
-<!DOCTYPE html>
+@extends('layout')
 
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
-<html lang="en">
+@section('head')
+    <title> Frequently Asked Questions</title>
+    <meta name="FAQ page for Shirel's Snopik website for school">
+@endsection
 
+@section('header-title')
+    <h1>Frequently Asked Questions:</h1>
+@endsection
 
-<head>
-    <title> Frequently Asked Questions </title>
-    <meta name="description"
-          content="FAQ page for Shirel's Snopik website for school">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-
-</head>
-
-<body>
-
-<header>
-    <div class="grid-Header">
-        <div>
-            <h1>Frequently Asked Questions:</h1>
-        </div>
-        <?php require "style/head.php" ?>
-
-
-<main>
+@section('content')
     <div class="grid-faq">
 
         <div class="apple-pic">
@@ -73,9 +54,4 @@
 
         </div>
     </div>
-</main>
-
-<?php require "style/footer.php" ?>
-</body>
-
-</html>
+@endsection

@@ -1,6 +1,6 @@
 *{
-  margin: 0px;
-  padding:0px;
+  margin: 0;
+  padding:0;
 }
 /*-------------------------------------------Areas in the webpages (header, body, footer)-------------------------------------------------- */
 /*---------------------------------------------------Header and navigation------------------------------------------------------------------*/
@@ -11,7 +11,7 @@ header  {
   text-align:center;
   position: fixed;
   overflow: hidden;
-  padding:10px 10px 0px 0px;
+  padding:10px 10px 0 0;
 }
 
  .home {
@@ -57,8 +57,8 @@ header  {
   float:left;
   text-align: center;
  }
- 
-.nav-list li a { 
+
+.nav-list li a {
   font-size:20px;
   color:#F9FAF4;
   overflow: hidden;
@@ -82,7 +82,7 @@ header  {
 }
 
 .active, .nav-list a:hover {
-  color:#68a9af !important; 
+  color:#68a9af !important;
   padding-bottom: 20% !important;
 }
 
@@ -91,7 +91,7 @@ header  {
 
 body{
   background-color:#F9FAF4;
-  position:relative; 
+  position:relative;
   min-height: 100vh;
 }
 
@@ -109,9 +109,9 @@ main{
 footer{
   width: 100%;
   background-color: #68a9af;
-  position:absolute; 
+  position:absolute;
   bottom: 0;
-  
+
 }
 
 .footer-Menu li{
@@ -120,7 +120,7 @@ footer{
   overflow: hidden;
  }
 
-.footer-Menu li a { 
+.footer-Menu li a {
   font-size:16px;
   color: #F9FAF4;
   display:block;
@@ -199,7 +199,7 @@ p, .p-summary, .p-summary2, .p-summary3, .goals-list, #hobbies-list, .blog-post 
   border-radius: 10px;
   border:2px solid #FFC94B;
   }
-  
+
   /*=========================================================Tables settings============================================================*/
   table.dashboard-table-quartile {
     border-collapse:collapse;
@@ -210,29 +210,29 @@ p, .p-summary, .p-summary2, .p-summary3, .goals-list, #hobbies-list, .blog-post 
     background-color: #F17A7E;
     width: 100%;
   }
-  
+
   .dashboard-table-quartile thead tr, .dashboard-header-table{
     text-align: Center;
     font-family: Lobster;
     color: #F9FAF4;
   }
-  
+
   .dashboard-table-quartile thead tr {
     background-color: #FFC94B;
     font-size: 22px;
   }
-  
+
   .dashboard-header-table {
     background-color: #F17A7E;
     font-size: 24px;
     font-weight: bold;
   }
-  
+
   .dashboard-table-quartile td {
     padding: 12px 20px;
     width: 20% ;
   }
-  
+
   .dashboard-table-quartile tbody td {
     background-color: #F9FAF4;
     color: #0a0a0a;
@@ -242,7 +242,7 @@ p, .p-summary, .p-summary2, .p-summary3, .goals-list, #hobbies-list, .blog-post 
     border-bottom: 1px solid #FFC94B;
     font-family: sans-serif;
   }
-  
+
   .not-graded {
     background-color: #dbdbd7 !important;
   }
@@ -296,7 +296,6 @@ h2.blog,p.blog-pos1,p.blog-pos2,p.blog-pos3{
 
 h2.blog {
   background-color: #f7eeda;
-  margin-top:2%;
   font-weight: lighter;
   width: 62%;
   margin:1% 30% 0 20%;
@@ -327,11 +326,11 @@ p.blog-pos3 {
 }
 
 /*------------------------------------------------Grids and pictures (divided by page)----------------------------------------------------------*/
-/*--------------------------------------------------------home page-----------------------------------------------------------------------------*/ 
+/*--------------------------------------------------------home page-----------------------------------------------------------------------------*/
 .grid-home-page {
   display: grid;
   grid-template-columns: auto auto auto ;
-  grid-gap: 5px ; 
+  grid-gap: 5px ;
 }
 
 .grid-home-page > div {
@@ -344,7 +343,7 @@ p.blog-pos3 {
   width: 400px;
   height: auto;
   border-radius: 10%;
-} 
+}
 
 #me{
   grid-area: 1 / 1 /1/1;
@@ -356,15 +355,15 @@ p.blog-pos3 {
 
 #bamba {
   grid-area: 2 / 1;
-} 
+}
 
 #luna {
   grid-area: 2/3;
-} 
+}
 
 .Main-home-page {
   grid-area: 1 / 2 / 3 / 3 ;
-  padding: 20px 10px 0px 10px;
+  padding: 20px 10px 0 10px;
 }
 
 .goals-list {
@@ -390,7 +389,7 @@ p.blog-pos3 {
 }
 
 #facebook,#instagram{
-  width:50px; 
+  width:50px;
   height:50px;
 }
 
@@ -427,7 +426,7 @@ p.blog-pos3 {
 
 #couple-pic,#army-pic, #hobbies-pic {
   border-radius:10%;
-  width:400px; 
+  width:400px;
   height:auto;
 }
 
@@ -467,7 +466,7 @@ p.blog-pos3 {
 }
 
 .hobbies-pic {
-  grid-area:2/3;  
+  grid-area:2/3;
 }
 
 .inner-grid-hobbies{
@@ -485,8 +484,8 @@ p.blog-pos3 {
 }
 
 /*--------------------------------------------------------Dashboard page------------------------------------------------------------------------*/
-#tabels{
-  padding: 20px 10% 0px 10%;
+#tables{
+  padding: 20px 10% 0 10%;
 }
 
 #credits {
@@ -529,19 +528,19 @@ summary {
 }
 
 .apple-pic {
-  grid-area:1/1;  
+  grid-area:1/1;
 }
 
 .pineapple-pic {
-  grid-area:1/3;  
+  grid-area:1/3;
 }
 
 .orange-pic {
-  grid-area:3/1; 
+  grid-area:3/1;
 }
 
 .peach-pic {
-  grid-area:3/3;  
+  grid-area:3/3;
 }
 
 #peach-pic{
@@ -549,11 +548,11 @@ summary {
 }
 
 .strawberry-pic {
-  grid-area:5/1;  
+  grid-area:5/1;
 }
 
 .pear-pic {
-  grid-area:5/3;  
+  grid-area:5/3;
 }
 
 #pear-pic{
@@ -595,15 +594,15 @@ summary {
 .hackerone-poster-pos:hover{
     padding:20% 0 0 20%;
  }
-    
+
 .atos-pos{
     grid-area: 1 / 1;
 }
-  
+
 .atos-poster-pos{
     grid-area: 1 / 3 ;
 }
-  
+
 .atos-poster-pos:hover{
     padding:0 20% 20% 0;
 }

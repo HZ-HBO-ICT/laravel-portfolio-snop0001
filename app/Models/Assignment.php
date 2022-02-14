@@ -10,7 +10,7 @@ class Assignment extends Model
     use HasFactory;
 
     /**
-     * This function changes the assingments to complete
+     * This function changes the assignments to complete
      */
     public function complete()
     {

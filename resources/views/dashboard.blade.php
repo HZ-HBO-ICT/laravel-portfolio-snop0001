@@ -1,35 +1,15 @@
-<!DOCTYPE html>
+@extends('layout')
 
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
-<html lang="en">
+@section('head')
+    <title> Shirel's Dashboard </title>
+    <meta name="description" content="Dashboard page for Shirel's Snopik website for school">
+@endsection
 
+@section('header-title')
+    <h1>Welcome to The Dashboard!</h1>
+@endsection
 
-<head>
-    <title> Shirel's Dashboard</title>
-    <meta name="description"
-          content="Dashboard page for Shirel's Snopik website for school">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-
-</head>
-
-<body>
-<header>
-    <div class="grid-Header">
-        <div>
-            <h1>Welcome to The Dashboard!</h1>
-        </div>
-        <?php require "style/head.php" ?>
-
-
-
-
-<main>
+@section('content')
     <div class="prog-bar">
         <label id="bar" for="credits"> Number of Credits Obtained: 5 EC</label>
         <progress id="credits" value="5" max="45" > </progress>
@@ -38,7 +18,7 @@
     </div>
     <br>
 
-    <div id="tabels">
+    <div id="tables">
         <table class="dashboard-table-quartile">
             <thead>
             <tr>
@@ -57,7 +37,7 @@
             <tr>
                 <td> Programming and Career Orientation</td>
                 <td> 2.5</td>
-                <td>Assesment </td>
+                <td>Assessment </td>
                 <td class="not-graded" > </td>
             </tr>
 
@@ -138,7 +118,7 @@
             </tr>
 
             <tr>
-                <td> Assesment</td>
+                <td> Assessment</td>
                 <td class="not-graded"> </td>
             </tr>
 
@@ -224,12 +204,4 @@
         </table>
 
     </div>
-
-
-</main>
-
-<?php require "style/footer.php" ?>
-
-</body>
-
-</html>
+@endsection

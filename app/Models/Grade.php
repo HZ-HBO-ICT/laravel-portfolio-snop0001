@@ -10,7 +10,7 @@ class Grade extends Model
     use HasFactory;
 
     /**
-     * This function adds a new result to the grade if the conditons are met
+     * This function adds a new result to the grade if the conditions are met
      */
     public function addResult($newGrade)
     {
