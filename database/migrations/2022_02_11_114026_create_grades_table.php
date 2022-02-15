@@ -17,7 +17,7 @@ class CreateGradesTable extends Migration
             $table->id();
             $table->string('category');
             $table->string('course_name');
-            $table->decimal('EC',3,1);
+            $table->decimal('EC', 3, 1);
             $table->string('test_name');
             $table->string('grade_class')->default('not-graded');
             $table->decimal('lowest_passing_grade', 3, 1)->default(5.5)

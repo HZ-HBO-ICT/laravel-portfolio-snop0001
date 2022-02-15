@@ -13,8 +13,7 @@ class DashboardController
         $grades = Grade::all();
         $previousCategory = null;
         $totalEC=0;
-        return view('dashboard',
-            [
+        return view('dashboard', [
                 'grades'=>$grades,
                 'previousCategory'=>$previousCategory,
                 'totalEC'=>$totalEC,

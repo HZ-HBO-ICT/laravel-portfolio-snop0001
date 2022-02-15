@@ -1,10 +1,12 @@
 <?php
 namespace App\http\Controllers;
+
 use App\Models\Article;
 
 class BlogController
 {
-    public function show() {
+    public function show()
+    {
         return view('blog', ['articles'=>Article::all()]);
     }
 
@@ -13,7 +15,7 @@ class BlogController
      */
     public function showPost($link)
     {
-      $article = Article::where('link', $link);
+        $article = Article::where('link', $link);
         return view('articles.show', [
             'article' => $article->firstOrFail()
         ]);
