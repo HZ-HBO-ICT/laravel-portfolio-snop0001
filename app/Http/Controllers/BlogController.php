@@ -5,6 +5,9 @@ use App\Models\Article;
 
 class BlogController
 {
+    /**
+     * This function is made to show the view page for blog
+     */
     public function show()
     {
         return view('blog', ['articles'=>Article::all()]);
