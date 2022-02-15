@@ -1,6 +1,8 @@
 <?php
 namespace App\http\Controllers;
 
+use App\Models\Grade;
+
 class DashboardController
 {
     /**
@@ -8,6 +10,14 @@ class DashboardController
      */
     public function show()
     {
-        return view('dashboard');
+        $grades = Grade::all();
+        $previousCategory = null;
+        $totalEC=0;
+        return view('dashboard',
+            [
+                'grades'=>$grades,
+                'previousCategory'=>$previousCategory,
+                'totalEC'=>$totalEC,
+            ]);
     }
 }

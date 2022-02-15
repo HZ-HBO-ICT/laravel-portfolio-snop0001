@@ -18,6 +18,9 @@ class Grade extends Model
             $this->best_grade=$newGrade;
             if ($this->best_grade >= 5.5) {
                 $this->passed_at = now();
+                $this->grade_class='passed';
+            } else {
+                $this->grade_class='failed';
             }
         }
         $this->save();

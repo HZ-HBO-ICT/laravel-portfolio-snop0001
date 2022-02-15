@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<header>
+<header class="{{Request::path() === '/' ? 'home':''}}">
 
     <div class="grid-Header">
         <div>
@@ -24,9 +24,6 @@
                 @yield('header-title')
             </div>
         </div>
-
-    <?php $page = $_SERVER["REQUEST_URI"]?>
-    <?php trim($page, '/') ?>
 
     <div class="hz-logo">
         <img id="hz-logo" alt="HZ logo" src="/img/logo.png">
@@ -45,11 +42,15 @@
         </nav>
     </div>
 
-        //active
     </div>
   </header>
+
+
+    @yield('side-bar')
+
+
   <main>
-    @yield('content');
+    @yield('content')
   </main>
 
 <footer>
@@ -72,7 +73,8 @@
     </nav>
 </footer>
 
-
+@yield('script')
 </body>
 
 </html>
+

@@ -11,7 +11,9 @@
 
 
 <head>
-   @yield('head')
+    <title> {{$article ->title}}</title>
+    <meta name="description"
+          content={{$article ->excerpt}}>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
@@ -28,11 +30,15 @@
     </div>
 </header>
 
-@yield('ict-main')
+@if($article->link === 'ict-field-of-work')
+  {!!$article ->body!!}
+@else
 <main>
-    @yield('content')
-    <img alt="Picture of decorative flowers" src="/img/flowersBlog.png" >
+    {!!$article->body!!}
+
 </main>
+@endif
+<img alt="Picture of decorative flowers" src="/img/flowersBlog.png">
 
 <footer>
     <nav>

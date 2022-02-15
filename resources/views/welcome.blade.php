@@ -9,7 +9,6 @@
     <h1 class="home">Welcome to the Home Page!</h1>
 @endsection
 
-
 @section('content')
         <div class="grid-home-page">
             <div class="Main-home-page">
@@ -76,6 +75,27 @@
 
             </div>
 
+            <div class = "blogposts">
+                <br>
+                <div class= "posts">
+                <h2>Recent Blog Posts:</h2>
+                @foreach($articles as $article)
+                    <article id = "article">
+                 <h3> {{$article->title}}</h3>
+                 <p>{{$article->excerpt}}<a class="read-me" href=/blog/{{$article->link}}> Read
+                         more.</a></p>
+                    </article>
+                    <hr>
+                @endforeach
+                </div>
+                <br>
+                <div> <img alt="Picture of Shirel and Remco" class="pic-border" id="couple" title="Shirel&Remco" src="/img/coupleHome.jpg">
+                </div>
+                <br>
+                <div> <img alt="Picture of Shirel and Luna" class="pic-border" id="luna" title="My Bunny and Me" src="/img/luna.jpg">
+                </div>
+            </div>
+
             <div class="social-media-grid">
                 <div class="title-social-media">
                     <h2> Contact Me Here For Further Information!</h2>
@@ -88,20 +108,14 @@
                                                                                                        src="/img/instagram.png"> </a> </div>
             </div>
 
-
+            <div id = 'images'>
             <div> <img alt="Picture of Shirel" class="pic-border" id="me" title="Me" src="/img/me.jpg" >
             </div>
-
-            <div> <img alt="Picture of Shirel and Remco" class="pic-border" id="couple" title="Shirel&Remco" src="/img/coupleHome.jpg">
-            </div>
-
+            <br>
             <div> <img alt="Picture of Shirel and Bamba" class="pic-border" id="bamba" title="My Puppy and Me" src="/img/Bamba.png">
             </div>
-
-            <div> <img alt="Picture of Shirel and Luna" class="pic-border" id="luna" title="My Bunny and Me" src="/img/luna.jpg">
             </div>
-
-
+            <br>
             <div class="old-web"> <a id="old-web" href="/img/old-page.png" target="_blank"> How this website looked like in the beginning  </a> </div>
         </div>
 
