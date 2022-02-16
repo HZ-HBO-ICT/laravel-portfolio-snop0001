@@ -39,7 +39,9 @@
 
 
         <div id="all-q">
-
+            <button onclick="window.location.href='/faq/create'">
+                Submit New Question
+            </button>
             @foreach($questions as $question)
             <details>
                 <summary>

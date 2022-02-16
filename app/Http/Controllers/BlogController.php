@@ -57,7 +57,7 @@ class BlogController
         $article->link = request('link');
         //extra defaults for inside use
         $article->class = $nextClass;
-        $article->innerTitle='';
+        $article->innerTitle = '';
         //save it to the database
         $article->save();
         // redirecting to show a page
@@ -69,7 +69,7 @@ class BlogController
      */
     public function edit(Article $article)
     {
-
+        //empty
     }
 
     /**
@@ -77,7 +77,7 @@ class BlogController
      */
     public function update(Article $article)
     {
-
+        //empty
     }
 
     /**
@@ -85,6 +85,6 @@ class BlogController
      */
     public function destroy(Article $article)
     {
-
+        //empty
     }
 }

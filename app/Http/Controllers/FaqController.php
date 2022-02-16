@@ -1,4 +1,5 @@
 <?php
+
 namespace App\http\Controllers;
 
 use App\Models\Article;
@@ -12,7 +13,7 @@ class FaqController
     public function index()
     {
         // $questions = Faq::all();
-        return view('faqs.index', ['questions'=>Faq::all()]);
+        return view('faqs.index', ['questions' => Faq::all()]);
     }
 
     /**
@@ -64,7 +65,7 @@ class FaqController
      */
     public function edit(Faq $question)
     {
-
+        //empty
     }
 
     /**
@@ -72,7 +73,7 @@ class FaqController
      */
     public function update(Faq $question)
     {
-
+        //empty
     }
 
     /**
@@ -80,6 +81,6 @@ class FaqController
      */
     public function destroy(Faq $question)
     {
-
+        //empty
     }
 }

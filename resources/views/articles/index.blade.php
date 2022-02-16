@@ -12,6 +12,9 @@
 
 
 @section('content')
+    <button onclick="window.location.href='/faq/create'">
+        Submit New Post
+    </button>
     @foreach($articles as $article)
         <article>
             <h2 class="blog"> {{$article->title}} - {{Str::Limit($article->created_at, 10)}} </h2>
