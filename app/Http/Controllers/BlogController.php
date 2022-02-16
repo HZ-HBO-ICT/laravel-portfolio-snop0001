@@ -4,7 +4,6 @@ namespace App\http\Controllers;
 
 use App\Models\Article;
 
-
 class BlogController
 {
     /**

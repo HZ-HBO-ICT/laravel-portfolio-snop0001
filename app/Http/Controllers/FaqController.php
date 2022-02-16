@@ -21,7 +21,7 @@ class FaqController
      */
     public function show()
     {
-
+        //empty
     }
 
     /**
