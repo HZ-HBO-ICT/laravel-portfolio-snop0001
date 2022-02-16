@@ -11,11 +11,6 @@
 
 @section('content')
     <br>
-    @foreach($grades as $grade)
-        @if($grade->passed_at !== null)
-            {{$totalEC += $grade->EC}}
-        @endif
-    @endforeach
     <div class="prog-bar">
         <label id="bar" for="credits"> Number of Credits Obtained: {{$totalEC}} EC</label>
         <progress id="credits" value={{$totalEC}} max="45" > </progress>
@@ -24,13 +19,16 @@
     </div>
     <br>
 
+
+
     <div id="tables">
         @foreach($grades as $grade)
             @if($previousCategory !== $grade->category)
+                @php $previousCategory = $grade->category @endphp
                 <table class="dashboard-table-quartile">
                     <thead>
                     <tr>
-                        <td class="dashboard-header-table"> {{$previousCategory = $grade->category}}:</td>
+                        <td class="dashboard-header-table"> {{$grade->category}}:</td>
                     </tr>
 
                     <tr>

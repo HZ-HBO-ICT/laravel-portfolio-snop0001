@@ -8,7 +8,7 @@ class WelcomeController
     /**
      * This function is made to show the view page
      */
-    public function show()
+    public function index()
     {
             return view('welcome', ['articles'=>Article::take(3)->get()]);
     }

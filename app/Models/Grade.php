@@ -9,6 +9,11 @@ class Grade extends Model
 {
     use HasFactory;
 
+    protected $attributes = [
+        'grade_class' => 'not-graded',
+        'lowest_passing_grade' => 5.5,
+    ];
+
     /**
      * This function adds a new result to the grade if the conditions are met
      */
@@ -16,7 +21,7 @@ class Grade extends Model
     {
         if ($this->best_grade < $newGrade) {
             $this->best_grade=$newGrade;
-            if ($this->best_grade >= 5.5) {
+            if ($this->best_grade >= $this->lowest_passing_grade) {
                 $this->passed_at = now();
                 $this->grade_class='passed';
             } else {

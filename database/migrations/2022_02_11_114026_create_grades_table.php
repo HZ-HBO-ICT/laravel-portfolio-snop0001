@@ -17,12 +17,12 @@ class CreateGradesTable extends Migration
             $table->id();
             $table->string('category');
             $table->string('course_name');
-            $table->decimal('EC', 3, 1);
+            $table->decimal('EC', 4, 2);
             $table->string('test_name');
             $table->string('grade_class')->default('not-graded');
-            $table->decimal('lowest_passing_grade', 3, 1)->default(5.5)
+            $table->decimal('lowest_passing_grade', 4, 2)->default(5.5)
                 ->comment('Lowest grade to pass so average calculations can be applied');
-            $table->decimal('best_grade', 3, 1)->nullable();
+            $table->decimal('best_grade', 4, 1)->nullable();
             $table->date('passed_at')->nullable()
                 ->comment('Date that the grade was larger than or equal to the lowest passing grade');
             $table->timestamps();

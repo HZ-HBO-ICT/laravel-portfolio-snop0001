@@ -16,9 +16,15 @@ use App\Http\Controllers\{DashboardController,ProfileController,WelcomeControlle
 
 // Route::get('/posts/{slug}', [PostsController::class, 'show']);
 
-Route::get('/', [WelcomeController::class, 'show']);
-Route::get('/profile', [ProfileController::class, 'show']);
-Route::get('/dashboard', [DashboardController::class, 'show']);
-Route::get('/faq', [FaqController::class, 'show']);
-Route::get('/blog', [BlogController::class, 'show']);
-Route::get('/blog/{article}', [BlogController::class,'showPost']);
+Route::get('/', [WelcomeController::class, 'index']);
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/faq', [FaqController::class, 'index']);
+Route::post('/faq', [FaqController::class, 'store']);
+Route::get('/faq/create', [FaqController::class, 'create']);
+Route::get('/faq/{question}', [FaqController::class,'show']);
+Route::get('/blog', [BlogController::class, 'index']);
+Route::post('/blog', [BlogController::class, 'store']);
+Route::get('/blog/create', [BlogController::class, 'create']);
+Route::get('/blog/{article}', [BlogController::class,'show']);
+

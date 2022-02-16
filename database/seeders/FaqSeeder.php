@@ -15,6 +15,7 @@ class FaqSeeder extends Seeder
     public function run()
     {
         DB::table('faqs')->insert([
+            'created_at'=>'2021-09-10 13:53:43',
             'question' => 'How can you print a document from your laptop at HZ?',
             'answer'=> '<ol><li> Go to the website http://print.hz.nl </li>
         <li> Type in your HZ username and password and click on Login</li>
@@ -36,6 +37,7 @@ class FaqSeeder extends Seeder
         ]);
 
         DB::table('faqs')->insert([
+            'created_at'=>'2021-09-10 14:53:43',
             'question' => 'How can you scan a document a send it to your laptop at HZ?',
             'answer'=> '<ol><li> Ensure you have at least 0.07 euro credit. Although scanning is free, you must have
         this amount of credit on your HZ pass. </li>
@@ -53,6 +55,7 @@ class FaqSeeder extends Seeder
         ]);
 
         DB::table('faqs')->insert([
+            'created_at'=>'2021-09-10 15:53:43',
             'question' => 'What do you need to do when you are sick / show symptoms of coronavirus?',
             'answer'=> 'Contact the teachers/helpdesk at school and stay home.
             Follow the lessons on stream to compensate for that unusual sickness.',
@@ -61,6 +64,7 @@ class FaqSeeder extends Seeder
         ]);
 
         DB::table('faqs')->insert([
+            'created_at'=>'2021-09-10 16:53:43',
             'question' => 'How can you book a project space in one of the wings?',
             'answer'=> 'You can book a room on the HZ page after logging in by pressing the Selfservice Portal,
              it should be easy from thereon out.',
@@ -69,6 +73,7 @@ class FaqSeeder extends Seeder
         ]);
 
         DB::table('faqs')->insert([
+            'created_at'=>'2021-09-10 17:53:43',
             'question' => 'What are the instructions if you want to park your car at the HZ parking lot?',
             'answer'=> 'You must park your car "across the road", at the parking lot of the former PEZM.',
             'link' => '',

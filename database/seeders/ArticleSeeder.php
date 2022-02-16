@@ -17,12 +17,12 @@ class ArticleSeeder extends Seeder
     {
         //Article::factory()->count(2)->create();
         DB::table('articles')->insert([
+            'created_at'=>'2021-09-10 13:53:43',
             'title' => 'Actions done after feedback',
-            'excerpt'=> 'What I have changed in the website since the pitch',
-            'body' => '<article class="blog-article">
-        <h2 class="blog-Post"> The Feedback Actions Points I have changed since My Pitch:</h2>
-        <br>
-              <ol class="blog-post">
+            'innerTitle' => 'The Feedback Actions Points I have changed since My Pitch:',
+            'ExistsInSeeder' => 'yes',
+            'excerpt' => 'What I have changed in the website since the pitch',
+            'body' => ' <ol class="blog-post">
            <li> Cleaned up my style sheet,Cancelled repetitions (managed to narrow it down from 838 lines to 610). </li>
            <li>Making my footer not sticky but instead that it will stay at the bottom of the page.</li>
            <li>Added a logo of my name in all the pages of the website.</li>
@@ -31,16 +31,17 @@ class ArticleSeeder extends Seeder
             be more relevant, for example my goal and motivation. Added the
              connection between me wanting to work at HackerOne and my desire to help the world.</li>
 
-        </ol>
-
-      </article>',
+        </ol>',
             'class' => 'blog-pos3',
             'link' => 'changes-after-pitch',
         ]);
 
         DB::table('articles')->insert([
+            'created_at'=>'2021-09-10 14:53:43',
             'title' => 'ICT Field of Work',
-            'excerpt'=> 'knowledge from the Company Safari',
+            'innerTitle' => '',
+            'ExistsInSeeder' => 'yes',
+            'excerpt' => 'knowledge from the Company Safari',
             'body' => '<main class="main-ict-blog">
 
         <article>
@@ -118,12 +119,12 @@ class ArticleSeeder extends Seeder
         ]);
 
         DB::table('articles')->insert([
+            'created_at'=>'2021-09-10 15:53:43',
             'title' => 'First Feedback',
-            'excerpt'=> 'Feedback on My "Who Am I?" assignment...',
-            'body' => '<article class="blog-article">
-        <h2 class="blog-Post"> First Feedback on my "Who Am I?" assignment:</h2>
-        <br>
-          <p class="blog-post">
+            'innerTitle' => 'First Feedback on my "Who Am I?" assignment:',
+            'ExistsInSeeder' => 'yes',
+            'excerpt' => 'Feedback on My "Who Am I?" assignment...',
+            'body' => '<p class="blog-post">
             I received Daphnes feedback in person last week.
     Her feedback divided into two parts, one about my motivation for the studies and one about my personal development.
     About my motivation she told me it is better to focus on the story behind my love for programming and coding, which
@@ -139,19 +140,18 @@ class ArticleSeeder extends Seeder
     I am looking forward to managing and helping myself to be more relaxed and laid back
      then I am right now, so I will be able to produce
             good results and succeed in my studies together with having fun and leisure time as well.
-          </p>
-      </article>',
+          </p>',
             'class' => 'blog-pos2',
             'link' => 'first-feedback',
         ]);
 
         DB::table('articles')->insert([
+            'created_at'=>'2021-09-10 16:53:43',
             'title' => 'Programming experience',
-            'excerpt'=> 'Do I have experience in programming, from where and what kind of experience?',
-            'body' => '<article class="blog-article">
-        <h2 class="blog-post"> My experiance with programming:</h2>
-        <br>
-        <section>
+            'innerTitle' => 'My experiance with programming:',
+            'ExistsInSeeder' => 'yes',
+            'excerpt' => 'Do I have experience in programming, from where and what kind of experience?',
+            'body' => ' <section>
             <h3 class="blog-post">Do you have any programming experience? This may be due to you prior education, your
                 hobbies and interests, job or any other kind of experience.</h3>
                <p class="blog-post"> Yes </p>
@@ -179,12 +179,12 @@ class ArticleSeeder extends Seeder
         ]);
 
         DB::table('articles')->insert([
+            'created_at'=>'2021-09-10 17:53:43',
             'title' => 'Personal SWOT Analysis',
-            'excerpt'=> 'My personal Strenghts, weaknesses,Opportunities and Threats for the upcoming studies',
-            'body' => '<article class="blog-article">
-        <h2 class="blog-post"> Personal SWOT analysis:</h2>
-
-        <section>
+            'innerTitle' => 'Personal SWOT analysis:',
+            'ExistsInSeeder' => 'yes',
+            'excerpt' => 'My personal Strenghts, weaknesses,Opportunities and Threats for the upcoming studies',
+            'body' => '<section>
           <h3 class="blog-post">Strenghts:</h3>
           <br>
                <ol class="blog-post">
@@ -196,7 +196,6 @@ class ArticleSeeder extends Seeder
                  programming made me think in algorithms
                 and pay attention to small details in general, life situations and in tasks.</li>
                </ol>
-
         </section>
         <br>
         <section>
@@ -238,21 +237,18 @@ class ArticleSeeder extends Seeder
                   and I will work hard to get passed them and use them as much as I can for my advantage
                    like I wrote in the "Opportunities" section.
                 </p>
-         </section>
-
-
-      </article>',
+         </section>',
             'class' => 'blog-pos1',
             'link' => 'personal-swot-analysis',
         ]);
 
         DB::table('articles')->insert([
+            'created_at'=>'2021-09-10 18:53:43',
             'title' => 'Study Choice',
-            'excerpt'=> 'Study Choice Activities Motivate Your Study Choice After completing the Study',
-            'body' => '<article  class="blog-article">
-        <h2 class="blog-post"> Study Choice:</h2>
-        <br>
-        <section>
+            'innerTitle' => 'Study Choice:',
+            'ExistsInSeeder' => 'yes',
+            'excerpt' => 'Study Choice Activities Motivate Your Study Choice After completing the Study',
+            'body' => '<section>
           <h3 class="blog-post">Study Choice Activities </h3>
              <p class="blog-post">I have read about my options and different paths I can take
               and took my time to understand
@@ -300,27 +296,25 @@ class ArticleSeeder extends Seeder
                       them to create something
                      useful for humanity.
                 </p>
-         </section>
-      </article>',
+         </section>',
             'class' => 'blog-pos2',
             'link' => 'study-choice-blog-post',
         ]);
 
         DB::table('articles')->insert([
+            'created_at'=>'2021-09-10 19:53:43',
             'title' => 'Nesting Article in Section or Vice Versa?',
-            'excerpt'=> 'In my opinion the Section element should be inside of the Article element...',
-            'body' => '<article class="blog-article">
-        <h2 class="blog-post"> Nesting Article in Section or Vice Versa?</h2>
-        <br>
-          <p class="blog-post"> In my opinion the Section element should be
+            'innerTitle' => 'Nesting Article in Section or Vice Versa?',
+            'ExistsInSeeder' => 'yes',
+            'excerpt' => 'In my opinion the Section element should be inside of the Article element...',
+            'body' => '<p class="blog-post"> In my opinion the Section element should be
           inside of the Article element. Article is meant
             to represent individiual parts of text that dont necessary have
             a connection between them in terms of structure of text,
              in contrast to Sections which are meant to define parts of the same
               text such as "Description","content","contact" etc. so they should appear in a certain order.
             Therfore, in my opinion an Article will be built by a number of Sections to form a proper text.
-          </p>
-      </article>',
+          </p>',
             'class' => 'blog-pos3',
             'link' => 'article-section-blog-post',
         ]);

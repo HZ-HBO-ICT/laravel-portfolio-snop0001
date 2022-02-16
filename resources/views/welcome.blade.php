@@ -79,13 +79,14 @@
                 <br>
                 <div class= "posts">
                 <h2>Recent Blog Posts:</h2>
+                    <br>
                 @foreach($articles as $article)
                     <article id = "article">
                  <h3> {{$article->title}}</h3>
                  <p>{{$article->excerpt}}<a class="read-me" href=/blog/{{$article->link}}> Read
                          more.</a></p>
                     </article>
-                    <hr>
+                    <br>
                 @endforeach
                 </div>
                 <br>
