@@ -63,24 +63,35 @@ class FaqController
     /**
      * This function is made to show a view to edit an existing resource
      */
-    public function edit(Faq $question)
+    public function edit($id)
     {
-        //empty
+        $question = Faq::where('id', $id);
+        return view ('faqs.edit',['question' => $question->firstOrFail()]);
     }
 
     /**
      * This function is made to persist the edited resource
      */
-    public function update(Faq $question)
+    public function update($id)
     {
-        //empty
+        //getting the current question we are editing
+        $question = Faq::find($id);
+        //editing the fields according to what is retreived from the form
+        $question->question = request('question');
+        $question->answer = request('answer');
+        //saving it
+        $question->save();
+        //redirecting back to the faq main page
+        return redirect('/faq');
     }
 
     /**
      * This function is made to delete the resource
      */
-    public function destroy(Faq $question)
+    public function destroy($id)
     {
-        //empty
+        $question = Faq::find($id);
+        $question->delete();
+        return redirect('/faq');
     }
 }

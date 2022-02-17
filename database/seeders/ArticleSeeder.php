@@ -30,7 +30,6 @@ class ArticleSeeder extends Seeder
            <li>Added some information in the website and edited different passages to
             be more relevant, for example my goal and motivation. Added the
              connection between me wanting to work at HackerOne and my desire to help the world.</li>
-
         </ol>',
             'class' => 'blog-pos3',
             'link' => 'changes-after-pitch',

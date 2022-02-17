@@ -51,12 +51,12 @@ class BlogController
         $article = new Article();
         //setting its values to be according to the data from the form
         $article->title = request('title');
+        $article->innerTitle = request('innerTitle');
         $article->excerpt = request('excerpt');
         $article->body = request('body');
         $article->link = request('link');
         //extra defaults for inside use
         $article->class = $nextClass;
-        $article->innerTitle = '';
         //save it to the database
         $article->save();
         // redirecting to show a page
@@ -66,24 +66,38 @@ class BlogController
     /**
      * This function is made to show a view to edit an existing resource
      */
-    public function edit(Article $article)
+    public function edit($link)
     {
-        //empty
+        $article = Article::where('link', $link);
+        return view ('articles.edit',['article' => $article->firstOrFail()]);
     }
 
     /**
      * This function is made to persist the edited resource
      */
-    public function update(Article $article)
+    public function update($link)
     {
-        //empty
+        //getting the current article we are editing
+        $article = Article::where('link', $link)->firstOrFail();
+        //editing the fields according to what is retreived from the form
+        $article->title = request('title');
+        $article->innerTitle = request('innerTitle');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+        $article->link = request('link');
+        //saving it
+        $article->save();
+        //redirecting back to the article page we edited
+        return redirect('/blog/'.$article->link);
     }
 
     /**
      * This function is made to delete the resource
      */
-    public function destroy(Article $article)
+    public function destroy($link)
     {
-        //empty
+        $article = Article::where('link', $link);
+        $article->delete();
+        return redirect('/blog');
     }
 }

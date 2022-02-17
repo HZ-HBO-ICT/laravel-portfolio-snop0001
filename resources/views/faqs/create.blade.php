@@ -1,11 +1,11 @@
-@extends('layout')
+@extends('faqs.layout')
 
 @section('head')
     <title> Submiting a New Question</title>
     <meta name="a page to submit a new question">
 @endsection
 
-@section('header-title')
+@section('title')
     <h1>Submit your new question</h1>
 @endsection
 

@@ -12,7 +12,7 @@
 
 
 @section('content')
-    <button onclick="window.location.href='/faq/create'">
+    <button onclick="window.location.href='/blog/create'">
         Submit New Post
     </button>
     @foreach($articles as $article)

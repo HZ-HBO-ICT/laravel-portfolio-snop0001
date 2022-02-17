@@ -52,6 +52,9 @@
                     </p>
                 </div>
             </details>
+                <button onclick="window.location.href='/faq/{{$question->id}}/edit'">
+                    Edit Question
+                </button>
             @endforeach
 
         </div>
