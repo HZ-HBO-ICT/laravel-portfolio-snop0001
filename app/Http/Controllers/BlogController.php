@@ -69,7 +69,7 @@ class BlogController
     public function edit($link)
     {
         $article = Article::where('link', $link);
-        return view ('articles.edit',['article' => $article->firstOrFail()]);
+        return view('articles.edit', ['article' => $article->firstOrFail()]);
     }
 
     /**
@@ -88,7 +88,7 @@ class BlogController
         //saving it
         $article->save();
         //redirecting back to the article page we edited
-        return redirect('/blog/'.$article->link);
+        return redirect('/blog/' . $article->link);
     }
 
     /**

@@ -66,7 +66,7 @@ class FaqController
     public function edit($id)
     {
         $question = Faq::where('id', $id);
-        return view ('faqs.edit',['question' => $question->firstOrFail()]);
+        return view('faqs.edit', ['question' => $question->firstOrFail()]);
     }
 
     /**
