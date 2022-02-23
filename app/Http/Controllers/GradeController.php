@@ -43,13 +43,13 @@ class GradeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      */
     public function store(Request $request)
     {
         $validatedAttributes = $this->validateGrade($request);
 
-       Grade::create($validatedAttributes);
+        Grade::create($validatedAttributes);
 
         // redirecting to show a page
         return redirect('/grade');
@@ -58,7 +58,7 @@ class GradeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Grade  $grade
+     * @param \App\Models\Grade $grade
      */
     public function show(Grade $grade)
     {
@@ -68,7 +68,7 @@ class GradeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Grade  $grade
+     * @param \App\Models\Grade $grade
      */
     public function edit(Grade $grade)
     {
@@ -78,8 +78,8 @@ class GradeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Grade  $grade
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Grade $grade
      */
     public function update(Request $request, Grade $grade)
     {
@@ -88,7 +88,7 @@ class GradeController extends Controller
             'course_name' => 'required',
             'EC' => 'required',
             'test_name' => 'required',
-            'best_grade'=>'required'
+            'best_grade' => 'required'
         ]);
 
         $grade->addResult($validateGrade['best_grade']);
@@ -102,7 +102,7 @@ class GradeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Grade  $grade
+     * @param \App\Models\Grade $grade
      */
     public function destroy(Grade $grade)
     {
@@ -116,7 +116,7 @@ class GradeController extends Controller
     public function validateGrade(Request $request): array
     {
         $validatedAttributes = $request->validate([
-            'category' => ['required', 'min:3','max:255'],
+            'category' => ['required', 'min:3', 'max:255'],
             'course_name' => 'required',
             'EC' => 'required',
             'test_name' => 'required'

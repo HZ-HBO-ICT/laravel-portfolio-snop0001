@@ -17,7 +17,9 @@ class Article extends Model
     // protected  $fillable = ['title','innerTitle', 'excerpt','body', 'link','class'];
     protected $guarded = [];
 
-    public function path() {
+    /** Creates a path */
+    public function path()
+    {
         return route('article.show', $this);
     }
 }
