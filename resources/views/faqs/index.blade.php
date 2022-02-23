@@ -47,14 +47,14 @@
                 <div class={{$faq->class_name}}>
                     <p>
                         {!! $faq->answer !!}
-                        <button class="editButton" onclick="window.location.href='/faq/{{$faq->id}}/edit'">
+                        <button class="editButton" onclick=window.location.href="{{route('faq.edit', $faq)}}">
                             Edit Question
                         </button>
                     </p>
                 </div>
             </details>
             @endforeach
-                <button class="buttonSubmit" onclick="window.location.href='/faq/create'">
+                <button class="buttonSubmit" onclick=window.location.href="{{route('faq.create')}}">
                     Submit New Question
                 </button>
         </div>

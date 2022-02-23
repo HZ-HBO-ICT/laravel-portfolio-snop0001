@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-<form class="createForm" method="POST" action="/faq">
+<form class="createForm" method="POST" action="{{route('faq.index')}}">
     <h3 class="formH3"> Form for new Question</h3>
     @csrf
     <div class="qriteria">

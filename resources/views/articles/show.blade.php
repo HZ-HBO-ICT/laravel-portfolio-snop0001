@@ -15,7 +15,7 @@
 @section('main-Show')
     @if($article->link === 'ict-field-of-work')
         {!!$article ->body!!}
-        <button id="button"class="buttonSubmit" onclick="window.location.href='/article/{{$article->id}}/edit'">
+        <button id="button"class="buttonSubmit" onclick=window.location.href="{{route('article.edit', $article)}}">
             Edit This post
         </button>
     @else
@@ -30,7 +30,7 @@
                 @endif
             </article>
 
-            <button id="button"class="buttonSubmit" onclick="window.location.href='/article/{{$article->id}}/edit'">
+            <button id="button"class="buttonSubmit" onclick= window.location.href="{{route('article.edit', $article)}}">
                 Edit This post
             </button>
         </main>
@@ -39,5 +39,5 @@
 @endsection
 
 @section('button')
-    <li><a href="#" onclick="window.location.href='/article'">Return to Blog Page</a></li>
+    <li><a href="#" onclick=window.location.href="{{route('article.index')}}">Return to Blog Page</a></li>
 @endsection

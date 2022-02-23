@@ -10,10 +10,10 @@
 @endsection
 
 @section('content')
-    <form class="createForm" method="POST" action="/faq/{{$faq->id}}">
-        <h3 class="formH3"> Form for Editing a question</h3>
+    <form class="createForm" method="POST" action="{{route('faq.show', $faq)}}">
         @csrf
         @method('PUT')
+        <h3 class="formH3"> Form for Editing a question</h3>
         <div class="qriteria">
             <label for="question">Question:</label><br>
             <div>
@@ -47,7 +47,7 @@
         <button class="buttonSubmit" type="submit">Submit</button>
     </form>
 
-    <form method="POST" action="/faq/{{$faq->id}}">
+    <form method="POST" action="{{route('faq.show', $faq)}}">
         @csrf
         @method('DELETE')
         <button class="buttonSubmit" type="submit">Delete</button>

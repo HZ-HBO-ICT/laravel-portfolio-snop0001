@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <form class="createForm" method="POST" action="/article/{{$article->id}}">
+    <form class="createForm" method="POST" action="{{route('article.show', $article)}}">
         <h3 class="formH3"> Edit your post here:</h3>
         @csrf
         @method('PUT')
@@ -95,7 +95,7 @@
         <button class="buttonSubmit" type="submit">Submit</button>
     </form>
 
-    <form method="POST" action="/article/{{$article->id}}">
+    <form method="POST" action="{{route('article.show', $article)}}">
         @csrf
         @method('DELETE')
         <button class="buttonSubmit" type="submit">Delete</button>
@@ -104,5 +104,5 @@
 @endsection
 
 @section('button')
-    <li><a href="#" onclick="window.location.href='/article/{{$article->id}}'">Return to Article</a></li>
+    <li><a href="#" onclick= window.location.href="{{route('article.show', $article)}}'">Return to Article</a></li>
 @endsection

@@ -9,6 +9,8 @@ class Grade extends Model
 {
     use HasFactory;
 
+    protected $guarded=[];
+
     protected $attributes = [
         'grade_class' => 'not-graded',
         'lowest_passing_grade' => 5.5,

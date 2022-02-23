@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <form class="createForm" method="POST" action="/article">
+    <form class="createForm" method="POST" action="{{route('article.index')}}">
         @csrf
         <h3 class="formH3"> Submit Your Post here:</h3>
         <div class="qriteria">
@@ -86,5 +86,5 @@
 
 
 @section('button')
-    <li><a href="#" onclick="window.location.href='/article'">Return to Blog</a></li>
+    <li><a href="#" onclick=window.location.href="{{route('article.index')}}">Return to Blog</a></li>
 @endsection
