@@ -39,24 +39,24 @@
 
 
         <div id="all-q">
-            <button onclick="window.location.href='/faq/create'">
-                Submit New Question
-            </button>
-            @foreach($questions as $question)
+            @foreach($faqs as $faq)
             <details>
                 <summary>
-                    {{$question->question}} </summary>
-                <div class={{$question->class_name}}>
+                    {{$faq->question}}
+                </summary>
+                <div class={{$faq->class_name}}>
                     <p>
-                        {!! $question->answer !!}
+                        {!! $faq->answer !!}
+                        <button class="editButton" onclick="window.location.href='/faq/{{$faq->id}}/edit'">
+                            Edit Question
+                        </button>
                     </p>
                 </div>
             </details>
-                <button onclick="window.location.href='/faq/{{$question->id}}/edit'">
-                    Edit Question
-                </button>
             @endforeach
-
+                <button class="buttonSubmit" onclick="window.location.href='/faq/create'">
+                    Submit New Question
+                </button>
         </div>
     </div>
 @endsection

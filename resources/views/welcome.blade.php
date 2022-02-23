@@ -78,12 +78,10 @@
             <div class = "blogposts">
                 <br>
                 <div class= "posts">
-                <h2>Recent Blog Posts:</h2>
-                    <br>
                 @foreach($articles as $article)
                     <article id = "article">
                  <h3> {{$article->title}}</h3>
-                 <p>{{$article->excerpt}}<a class="read-me" href=/blog/{{$article->link}}> Read
+                 <p class={{$article->class}} >{{$article->excerpt}}<a class="read-me" href=/article/{{$article->id}}> Read
                          more.</a></p>
                     </article>
                     <br>

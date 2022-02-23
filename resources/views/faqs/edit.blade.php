@@ -10,31 +10,47 @@
 @endsection
 
 @section('content')
-    <form method="POST" action="/faq/{{$question->id}}">
+    <form class="createForm" method="POST" action="/faq/{{$faq->id}}">
+        <h3 class="formH3"> Form for Editing a question</h3>
         @csrf
         @method('PUT')
-        <div>
+        <div class="qriteria">
             <label for="question">Question:</label><br>
             <div>
-                <textarea name="question" id="question" rows="3" cols="50">{{$question->question}} </textarea>
+                <textarea
+                    class="@error('question') is-invalid @enderror inputField"
+                    name="question"
+                    id="question"
+                    rows="3"
+                    cols="80">{{$faq->question}} </textarea>
+                @error('question')
+                <p class="error-Message">{{$errors->first('question')}}</p>
+                @enderror
             </div>
         </div>
 
-        <div>
+        <div class="qriteria" >
             <label for="answer">Answer:</label><br>
             <div>
-                <textarea name="answer" id="answer" rows="3" cols="50">{{$question->answer}} </textarea>
+                <textarea
+                    class="@error('answer') is-invalid @enderror inputField"
+                    name="answer"
+                    id="answer"
+                    rows="10"
+                    cols="80">{{$faq->answer}}</textarea>
+                @error('answer')
+                <p class="error-Message">{{$errors->first('answer')}}</p>
+                @enderror
             </div>
         </div>
 
-        <button type="submit">Submit</button>
-
-        <form method="POST" action="/faq/{{$question->id}}">
-            @csrf
-            @method('DELETE')
-            <button type="submit">Delete</button>
-        </form>
-
-
+        <button class="buttonSubmit" type="submit">Submit</button>
     </form>
+
+    <form method="POST" action="/faq/{{$faq->id}}">
+        @csrf
+        @method('DELETE')
+        <button class="buttonSubmit" type="submit">Delete</button>
+    </form>
+
 @endsection

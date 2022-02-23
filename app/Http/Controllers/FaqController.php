@@ -4,6 +4,7 @@ namespace App\http\Controllers;
 
 use App\Models\Article;
 use App\Models\Faq;
+use Illuminate\Http\Request;
 
 class FaqController
 {
@@ -13,7 +14,7 @@ class FaqController
     public function index()
     {
         // $questions = Faq::all();
-        return view('faqs.index', ['questions' => Faq::all()]);
+        return view('faqs.index', ['faqs' => Faq::all()]);
     }
 
     /**
@@ -35,27 +36,22 @@ class FaqController
     /**
      * This function is made to persist the new resource
      */
-    public function store(Faq $question)
+    public function store(Request $request)
     {
-        $question = Faq::latest()->first();
-        if ($question->class_name === 'p-summary') {
+        $validatedAttributes = $this->validateFaq($request);
+
+        $question1 = Faq::latest()->first();
+        if ($question1->class_name === 'p-summary') {
             $nextClass = 'p-summary2';
-        } elseif ($question->class_name === 'p-summary2') {
+        } elseif ($question1->class_name === 'p-summary2') {
             $nextClass = 'p-summary3';
         } else {
             $nextClass = 'p-summary';
         }
+        $validatedAttributes['class_name']= $nextClass;
 
-        //creating a new article
-        $question = new Faq();
-        //setting its values to be according to the data from the form
-        $question->question = request('question');
-        $question->answer = request('answer');
-        //extra defaults for inside use
-        $question->class_name = $nextClass;
-        //$question->link = '';
-        //save it to the database
-        $question->save();
+        Faq::create($validatedAttributes);
+
         // redirecting to show a page
         return redirect('/faq');
     }
@@ -63,24 +59,18 @@ class FaqController
     /**
      * This function is made to show a view to edit an existing resource
      */
-    public function edit($id)
+    public function edit(Faq $faq)
     {
-        $question = Faq::where('id', $id);
-        return view('faqs.edit', ['question' => $question->firstOrFail()]);
+        return view('faqs.edit', ['faq' => $faq]);
     }
 
     /**
      * This function is made to persist the edited resource
      */
-    public function update($id)
+    public function update(Faq $faq, Request $request)
     {
-        //getting the current question we are editing
-        $question = Faq::find($id);
-        //editing the fields according to what is retreived from the form
-        $question->question = request('question');
-        $question->answer = request('answer');
-        //saving it
-        $question->save();
+        $faq->update($this->validateFaq($request));
+
         //redirecting back to the faq main page
         return redirect('/faq');
     }
@@ -88,10 +78,21 @@ class FaqController
     /**
      * This function is made to delete the resource
      */
-    public function destroy($id)
+    public function destroy(Faq $faq)
     {
-        $question = Faq::find($id);
-        $question->delete();
+        $faq->delete();
         return redirect('/faq');
+    }
+
+    /**
+     * @return array
+     */
+    public function validateFaq(Request $request): array
+    {
+        $validatedAttributes = $request->validate([
+            'question' => ['required','min:10'],
+            'answer'=>['required','min:10'],
+        ]);
+        return $validatedAttributes;
     }
 }

@@ -12,15 +12,15 @@
 
 
 @section('content')
-    <button onclick="window.location.href='/blog/create'">
-        Submit New Post
-    </button>
     @foreach($articles as $article)
         <article>
             <h2 class="blog"> {{$article->title}} - {{Str::Limit($article->created_at, 10)}} </h2>
-            <p class={{$article->class}}>{{$article->excerpt}} <a class="read-me" href="/blog/{{$article->link}}"> Read
+            <p class={{$article->class}}>{{$article->excerpt}} <a class="read-me" href="/article/{{$article->id}}"> Read
                     more.</a></p>
         </article>
     @endforeach
+    <button   class="buttonSubmit" onclick="window.location.href='/article/create'">
+        Submit New Post
+    </button>
     <br><br>
 @endsection

@@ -16,7 +16,7 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('innerTitle')->default(null);
+            $table->string('innerTitle')->default(null)->nullable();
             $table->string('ExistsInSeeder')->default('no');
             $table->text('excerpt');
             $table->text('body');

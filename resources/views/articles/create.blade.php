@@ -13,38 +13,78 @@
 @endsection
 
 @section('content')
-    <h2>Submit Your Post here:</h2>
-    <form method="POST" action="/blog">
+    <form class="createForm" method="POST" action="/article">
         @csrf
-       <div class="field">
-          <label for="title"> Title </label>
-           <div class="control">
-               <input type="text" name="title" id="title">
-           </div>
-       </div>
+        <h3 class="formH3"> Submit Your Post here:</h3>
+        <div class="qriteria">
+            <label for="title"> Title </label>
+            <div class="control">
+                <textarea
+                    class="@error('title') is-invalid @enderror inputField"
+                    name="title" id="title"
+                    rows="2"
+                    cols="50">{{old('title')}}</textarea>
+                @error('title')
+                <p class="error-Message">{{$errors->first('title')}}</p>
+                @enderror
+            </div>
+        </div>
 
-        <div class="field">
+        <div class="qriteria">
+            <label for="innerTitle"> Inner Title </label>
+            <div class="control">
+                <textarea
+                    class="@error('innerTitle') is-invalid @enderror inputField"
+                    name="innerTitle"
+                    id="innerTitle"
+                    rows="2"
+                    cols="50">{{old('innerTitle')}}</textarea>
+                @error('innerTitle')
+                <p class="error-Message">{{$errors->first('innerTitle')}}</p>
+                @enderror
+            </div>
+        </div>
+
+        <div class="qriteria">
             <label for="excerpt"> Excerpt </label>
             <div class="control">
-                <textarea name="excerpt" id="excerpt" rows="2" cols="50"> </textarea>
+                <textarea class="@error('excerpt') is-invalid @enderror inputField" name="excerpt" id="excerpt" rows="3"
+                          cols="80">{{old('excerpt')}}</textarea>
+                @error('excerpt')
+                <p class="error-Message">{{$errors->first('excerpt')}}</p>
+                @enderror
             </div>
         </div>
 
-        <div class="field">
+        <div class="qriteria">
             <label for="body"> Body </label>
             <div class="control">
-                <textarea name="body" id="body" rows="3" cols="50"> </textarea>
+                <textarea class="@error('body') is-invalid @enderror inputField" name="body" id="body" rows="5"
+                          cols="80">{{old('body')}}</textarea>
+                @error('body')
+                <p class="error-Message">{{$errors->first('body')}}</p>
+                @enderror
             </div>
         </div>
 
-        <div class="field">
+        <div class="qriteria">
             <label for="link"> Write what will show in URI </label>
             <div class="control">
-                <input type="text" name="link" id="link" value="for example: My-Post-1">
+                <textarea class="@error('link') is-invalid @enderror inputField" name="link" id="link" rows="2"
+                          cols="50"
+                          placeholder="for example: My-Post-1">{{old('link')}}</textarea>
+                @error('link')
+                <p class="error-Message">{{$errors->first('link')}}</p>
+                @enderror
             </div>
         </div>
 
-        <button type="submit">Submit</button>
+        <button class="buttonSubmit" type="submit">Submit</button>
 
     </form>
+@endsection
+
+
+@section('button')
+    <li><a href="#" onclick="window.location.href='/article'">Return to Blog</a></li>
 @endsection

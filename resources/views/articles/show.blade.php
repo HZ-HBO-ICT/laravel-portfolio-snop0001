@@ -15,6 +15,9 @@
 @section('main-Show')
     @if($article->link === 'ict-field-of-work')
         {!!$article ->body!!}
+        <button id="button"class="buttonSubmit" onclick="window.location.href='/article/{{$article->id}}/edit'">
+            Edit This post
+        </button>
     @else
         <main>
             <article class="blog-article">
@@ -27,14 +30,14 @@
                 @endif
             </article>
 
-
+            <button id="button"class="buttonSubmit" onclick="window.location.href='/article/{{$article->id}}/edit'">
+                Edit This post
+            </button>
         </main>
     @endif
-    <button onclick="window.location.href='/blog/{{$article->link}}/edit'">
-        Edit This post
-    </button>
+
 @endsection
 
 @section('button')
-    <li><a href="#" onclick="window.location.href='/blog'">Return to Blog Page</a></li>
+    <li><a href="#" onclick="window.location.href='/article'">Return to Blog Page</a></li>
 @endsection

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{DashboardController,ProfileController,WelcomeController,FaqController,BlogController};
+use App\Http\Controllers\{DashboardController,ProfileController,WelcomeController,FaqController,ArticleController};
 
 /*
 |--------------------------------------------------------------------------
@@ -35,12 +35,12 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::resource('/faq', FaqController::class);
 
 //Blog and articles
-//Route::get('/blog', [BlogController::class, 'index']);
-//Route::post('/blog', [BlogController::class, 'store']);
-//Route::get('/blog/create', [BlogController::class, 'create']);
-//Route::get('/blog/{article}', [BlogController::class,'show']);
-//Route::get('/blog/{article}/edit', [BlogController::class,'edit']);
-//Route::put('/blog/{article}', [BlogController::class,'update']);
-//Route::delete('/blog/{article}', [BlogController::class,'destroy']);
+//Route::get('/blog', [ArticleController::class, 'index']);
+//Route::post('/blog', [ArticleController::class, 'store']);
+//Route::get('/blog/create', [ArticleController::class, 'create']);
+//Route::get('/blog/{article}', [ArticleController::class,'show']);
+//Route::get('/blog/{article}/edit', [ArticleController::class,'edit']);
+//Route::put('/blog/{article}', [ArticleController::class,'update']);
+//Route::delete('/blog/{article}', [ArticleController::class,'destroy']);
 
-Route::resource('/blog', BlogController::class);
+Route::resource('/article', ArticleController::class);

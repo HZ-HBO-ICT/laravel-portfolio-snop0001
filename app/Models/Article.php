@@ -13,4 +13,11 @@ class Article extends Model
         'innerTitle' => null,
         'ExistsInSeeder' => 'no',
     ];
+
+    // protected  $fillable = ['title','innerTitle', 'excerpt','body', 'link','class'];
+    protected $guarded = [];
+
+    public function path() {
+        return route('articles.show', $this);
+    }
 }

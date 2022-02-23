@@ -10,6 +10,6 @@ class WelcomeController
      */
     public function index()
     {
-            return view('welcome', ['articles'=>Article::take(3)->get()]);
+            return view('welcome', ['articles'=>Article::latest()->take(3)->get()]);
     }
 }
