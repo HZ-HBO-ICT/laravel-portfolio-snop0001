@@ -11,7 +11,6 @@ class GradeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return
      */
     public function index()
     {
@@ -19,7 +18,7 @@ class GradeController extends Controller
         $grades = Grade::all()->sortBy('course_id');
         $previousCategory = null;
         $totalEC = 0;
-        $gradesInCourse=[];
+        $gradesInCourse = [];
         foreach ($courses as $course) {
             $counter = 0;
             if ($course->passed_at !== null) {
@@ -27,8 +26,8 @@ class GradeController extends Controller
             }
 
             foreach ($grades as $grade) {
-                if($grade->course_id === $course->id) {
-                  $counter ++;
+                if ($grade->course_id === $course->id) {
+                    $counter++;
                 }
             }
             $gradesInCourse[$course->id] = $counter;
@@ -36,11 +35,11 @@ class GradeController extends Controller
 
 
         return view('grades.index', [
-            'courses' =>$courses,
+            'courses' => $courses,
             'grades' => $grades,
             'previousCategory' => $previousCategory,
             'totalEC' => $totalEC,
-            'gradesInCourse' =>$gradesInCourse,
+            'gradesInCourse' => $gradesInCourse,
         ]);
     }
 
@@ -51,7 +50,7 @@ class GradeController extends Controller
     public function create()
     {
         $courses = Course::all();
-        return view('grades.create', ['courses'=> $courses]);
+        return view('grades.create', ['courses' => $courses]);
     }
 
     /**
@@ -87,7 +86,7 @@ class GradeController extends Controller
     public function edit(Grade $grade)
     {
         $courses = Course::all();
-        return view('grades.edit', ['grade' => $grade, 'courses'=> $courses]);
+        return view('grades.edit', ['grade' => $grade, 'courses' => $courses]);
     }
 
     /**

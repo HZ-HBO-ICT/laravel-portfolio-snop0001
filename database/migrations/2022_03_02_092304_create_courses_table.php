@@ -17,7 +17,7 @@ class CreateCoursesTable extends Migration
             $table->id();
             $table->string('category');
             $table->string('name');
-            $table->decimal('EC',4,2);
+            $table->decimal('EC', 4, 2);
             $table->date('passed_at')->nullable()
                 ->comment('Date that the average of all grades related to this course was larger than or equal to 5.5');
             $table->timestamps();

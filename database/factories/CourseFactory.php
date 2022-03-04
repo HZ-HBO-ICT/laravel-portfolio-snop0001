@@ -16,7 +16,7 @@ class CourseFactory extends Factory
         return [
             'category' => $this->faker->title,
             'name' => $this->faker->name,
-            'EC' => $this->faker->numberBetween(1,10),
+            'EC' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

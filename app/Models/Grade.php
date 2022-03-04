@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class Grade extends Model
 {
     use HasFactory;
@@ -37,10 +36,10 @@ class Grade extends Model
     }
 
     /**
-     * Getts the course related to the grade
+     * Gets the course related to the grade
      */
     public function course()
     {
-        return $this->belongsTo(Course::class,'course_id');
+        return $this->belongsTo(Course::class, 'course_id');
     }
 }
