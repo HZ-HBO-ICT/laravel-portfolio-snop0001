@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\Course;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 
@@ -15,19 +15,32 @@ class GradeController extends Controller
      */
     public function index()
     {
-        $grades = Grade::all()->sortBy('category');
+        $courses = Course::all()->sortBy('category');
+        $grades = Grade::all()->sortBy('course_id');
         $previousCategory = null;
         $totalEC = 0;
-        foreach ($grades as $grade) {
-            if ($grade->passed_at !== null) {
-                $totalEC += $grade->EC;
+        $gradesInCourse=[];
+        foreach ($courses as $course) {
+            $counter = 0;
+            if ($course->passed_at !== null) {
+                $totalEC += $course->EC;
             }
+
+            foreach ($grades as $grade) {
+                if($grade->course_id === $course->id) {
+                  $counter ++;
+                }
+            }
+            $gradesInCourse[$course->id] = $counter;
         }
 
+
         return view('grades.index', [
+            'courses' =>$courses,
             'grades' => $grades,
             'previousCategory' => $previousCategory,
             'totalEC' => $totalEC,
+            'gradesInCourse' =>$gradesInCourse,
         ]);
     }
 
@@ -37,7 +50,8 @@ class GradeController extends Controller
      */
     public function create()
     {
-        return view('grades.create');
+        $courses = Course::all();
+        return view('grades.create', ['courses'=> $courses]);
     }
 
     /**
@@ -72,7 +86,8 @@ class GradeController extends Controller
      */
     public function edit(Grade $grade)
     {
-        return view('grades.edit', ['grade' => $grade]);
+        $courses = Course::all();
+        return view('grades.edit', ['grade' => $grade, 'courses'=> $courses]);
     }
 
     /**
@@ -84,9 +99,7 @@ class GradeController extends Controller
     public function update(Request $request, Grade $grade)
     {
         $validateGrade = $request->validate([
-            'category' => ['required', 'min:3', 'max:255'],
-            'course_name' => 'required',
-            'EC' => 'required',
+            'course_id' => 'required',
             'test_name' => 'required',
             'best_grade' => 'required'
         ]);
@@ -116,12 +129,9 @@ class GradeController extends Controller
     public function validateGrade(Request $request): array
     {
         $validatedAttributes = $request->validate([
-            'category' => ['required', 'min:3', 'max:255'],
-            'course_name' => 'required',
-            'EC' => 'required',
+            'course_id' => 'required',
             'test_name' => 'required'
         ]);
-
 
         return $validatedAttributes;
     }

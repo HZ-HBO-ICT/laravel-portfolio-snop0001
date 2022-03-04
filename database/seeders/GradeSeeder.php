@@ -15,107 +15,77 @@ class GradeSeeder extends Seeder
     public function run()
     {
         DB::table('grades')->insert([
-            'category' => 'Quartile 1',
-            'course_name' => 'Programming and Career Orientation',
-            'EC' => '2.5',
+            'course_id' => '1',
             'test_name' => 'Assessment',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 1',
-            'course_name' => 'Computer Science Basics',
-            'EC' => '5',
+            'course_id' => '2',
             'test_name' => 'Written Exam',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 1',
-            'course_name' => 'Programming Basics',
-            'EC' => '5',
+            'course_id' => '3',
             'test_name' => 'Case Study',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 2',
-            'course_name' => 'Object Oriented Programming',
-            'EC' => '5',
+            'course_id' => '4',
             'test_name' => 'Case Study',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 2',
-            'course_name' => 'Object Oriented Programming',
-            'EC' => '5',
+            'course_id' => '4',
             'test_name' => 'Project',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 3',
-            'course_name' => 'Framework Development 1',
-            'EC' => '5',
+            'course_id' => '5',
             'test_name' => 'Case Study',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 3',
-            'course_name' => 'Framework Project 1',
-            'EC' => '2.5',
+            'course_id' => '6',
             'test_name' => 'Project',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 3',
-            'course_name' => 'Framework Project 1',
-            'EC' => '2.5',
+            'course_id' => '6',
             'test_name' => 'Assessment',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 3',
-            'course_name' => 'Framework Project 1',
-            'EC' => '2.5',
+            'course_id' => '6',
             'test_name' => 'Report',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 4',
-            'course_name' => 'Framework Project 2',
-            'EC' => '3.3',
+            'course_id' => '7',
             'test_name' => 'Portfolio',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 4',
-            'course_name' => 'Framework Project 2',
-            'EC' => '3.3',
+            'course_id' => '7',
             'test_name' => 'Project',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Quartile 4',
-            'course_name' => 'Framework Project 2',
-            'EC' => '3.3',
+            'course_id' => '7',
             'test_name' => 'Assessment',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Additional EC',
-            'course_name' => 'Personal Professional Development',
-            'EC' => '12.5',
+            'course_id' => '8',
             'test_name' => 'Portfolio',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Additional EC',
-            'course_name' => 'Personality 1',
-            'EC' => '1.25',
+            'course_id' => '9',
             'test_name' => 'Portfolio',
         ]);
 
         DB::table('grades')->insert([
-            'category' => 'Additional EC',
-            'course_name' => 'Personality 2',
-            'EC' => '1.25',
+            'course_id' => '10',
             'test_name' => 'Portfolio',
         ]);
     }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{GradeController, DashboardController,
+use App\Http\Controllers\{GradeController, CourseController,
     ProfileController,WelcomeController,FaqController,ArticleController};
 
 
@@ -22,9 +22,6 @@ Route::get('/', [WelcomeController::class, 'index']);
 //Profile
 Route::get('/profile', [ProfileController::class, 'index']);
 
-//Dashboard
-Route::get('/dashboard', [DashboardController::class, 'index']);
-
 //faqs
 Route::resource('/faq', FaqController::class);
 
@@ -33,3 +30,6 @@ Route::resource('/article', ArticleController::class);
 
 //grades
 Route::resource('/grade', GradeController::class);
+
+//courses
+Route::resource('/course', CourseController::class);
