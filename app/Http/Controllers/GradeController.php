@@ -20,6 +20,7 @@ class GradeController extends Controller
         $totalEC = 0;
         $gradesInCourse = [];
         foreach ($courses as $course) {
+            $course->assignCredits();
             $counter = 0;
             if ($course->passed_at !== null) {
                 $totalEC += $course->EC;
@@ -32,8 +33,6 @@ class GradeController extends Controller
             }
             $gradesInCourse[$course->id] = $counter;
         }
-
-
         return view('grades.index', [
             'courses' => $courses,
             'grades' => $grades,

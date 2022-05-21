@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('head')
     <title> Shirel's Dashboard </title>
@@ -13,7 +13,7 @@
     <br>
     <div class="prog-bar">
         <label id="bar" for="credits"> Number of Credits Obtained: {{$totalEC}} EC</label>
-        <progress id="credits" value={{$totalEC}} max="45"></progress>
+        <progress id="credits" value={!! $totalEC !!} max="45"></progress>
         <br>
         <label id="warning" for="credits"> You must have 45 EC by the end of the year! </label>
     </div>
@@ -22,7 +22,7 @@
     <div id="tables">
         @foreach($courses as $course)
             @if($previousCategory !== $course->category)
-                {!!$previousCategory = $course->category !!}
+                <?php $previousCategory = $course->category ?>
                 <table class="dashboard-table-quartile">
                     <thead>
                     <tr>
@@ -48,25 +48,27 @@
                                 @if($gradesInCourse[$course->id] === 0)
                                     <td colspan="3">
                                         <button class="editButton"
-                                                onclick=window.location.href="{{route('grade.create', $grade)}}">
+                                                onclick=window.location.href="{{route('grade.create')}}">
                                             Add Grade
                                         </button>
                                     </td>
-                                @endif
-                                @foreach($grades as $grade)
-                                    @if($grade->course_id === $course->id)
-                                        <td>{{$grade->test_name}} </td>
-                                        <td class='{{$grade->grade_class}}'>{{$grade->best_grade}} </td>
-                                        <td>
-                                            <button class="editButton"
-                                                    onclick=window.location.href="{{route('grade.edit', $grade)}}">
-                                                Edit Grade
-                                            </button>
-                                        </td>
                             </tr>
+                        @else
+                            @foreach($grades as $grade)
+                                @if($grade->course_id === $course->id)
+                                    <td>{{$grade->test_name}} </td>
+                                    <td class='{{$grade->grade_class}}'>{{$grade->best_grade}} </td>
+                                    <td>
+                                        <button class="editButton"
+                                                onclick=window.location.href="{{route('grade.edit', $grade)}}">
+                                            Edit Grade
+                                        </button>
+                                    </td>
+                                    </tr>
+                                @endif
+                            @endforeach
                         @endif
-                    @endforeach
-                    @endif
+                        @endif
                     @endforeach
                     </tbody>
                 </table>
@@ -79,7 +81,7 @@
         </button>
 
         <button class="buttonSubmit" onclick=window.location.href="{{route('course.index')}}">
-           List of courses
+            List of courses
         </button>
 
     </div>

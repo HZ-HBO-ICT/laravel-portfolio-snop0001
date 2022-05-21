@@ -1,4 +1,4 @@
-@extends ('layout');
+@extends ('layouts.layout');
 
 @section('head')
     <title> Shirel's Home Page</title>

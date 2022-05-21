@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('head')
     <title> List of courses </title>
@@ -13,7 +13,7 @@
     <div id="tables">
         @foreach($courses as $course)
             @if($previousCategory !== $course->category)
-                {!!$previousCategory = $course->category !!}
+                <?php $previousCategory = $course->category ?>
                 <table class="dashboard-table-quartile">
                     <thead>
                     <tr>

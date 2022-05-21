@@ -33,3 +33,14 @@ Route::resource('/grade', GradeController::class);
 
 //courses
 Route::resource('/course', CourseController::class);
+
+//Test
+Route::get('/test', function(){
+    return view('test');
+});
+
+//500 error temp
+Route::get('servererror', function () {
+    abort(500);
+})->name('servererror');
+

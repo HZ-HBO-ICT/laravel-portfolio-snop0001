@@ -1,6 +1,4 @@
-@extends('layout')
-
-
+@extends('layouts.layout')
 
 @section('head')
     <title> Shirel's Profile </title>
