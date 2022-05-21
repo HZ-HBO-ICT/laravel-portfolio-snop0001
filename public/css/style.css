@@ -1,0 +1,825 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------------------------------Areas in the webpages (header, body, footer)-------------------------------------------------- */
+/*---------------------------------------------------Header and navigation------------------------------------------------------------------*/
+/*=========================================================Header===========================================================================*/
+header {
+    background-color: #68a9af;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    overflow: hidden;
+    padding: 10px 10px 0 0;
+}
+
+.home {
+    background-color: #F9FAF4;
+}
+
+.grid-Header {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: auto auto;
+}
+
+.grid-Header > div {
+    font-size: 30px;
+}
+
+#my-logo, #hz-logo {
+    height: 60px;
+    width: auto;
+}
+
+#hz-logo {
+    padding: 5px 10px;
+}
+
+.hz-logo {
+    grid-area: 1/3;
+}
+
+.my-logo {
+    grid-area: 1/1;
+}
+
+/*============================================================Navigation==================================================================*/
+.nav-list {
+    list-style-type: none;
+    background-color: #ddd8a6;
+    position: fixed;
+    overflow: auto;
+    width: 100%;
+}
+
+.nav-list li {
+    float: left;
+    text-align: center;
+}
+
+.nav-list li a {
+    font-size: 20px;
+    color: #F9FAF4;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 5%;
+    width: 110px;
+    height: 20px;
+}
+
+.nav-list a:hover {
+    background-color: #f1f1ec;
+}
+
+.active {
+    background-color: #F9FAF4;
+}
+
+.active, .nav-list a:hover {
+    color: #68a9af !important;
+    padding-bottom: 20% !important;
+}
+
+
+/*-------------------------------------------------------------Center of Page-------------------------------------------------------------*/
+
+body {
+    background-color: #F9FAF4;
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    padding: 10% 5% 2.5rem 5%;
+}
+
+.main-ict-blog {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/*--------------------------------------------------------------Footer Area---------------------------------------------------------------*/
+
+footer {
+    width: 100%;
+    background-color: #68a9af;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.footer-Menu li {
+    float: left;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.footer-Menu li a {
+    font-size: 16px;
+    color: #F9FAF4;
+    display: block;
+    text-align: center;
+    padding: 10px 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-Menu a:hover {
+    background-color: #F9FAF4;
+    color: #68a9af;
+}
+
+/*--------------------------------------------------Text and Color for The rest of the elements-------------------------------------------------*/
+
+/*=========================================================Everything in Ariel font=========================================================*/
+h2, h3, p, .buttonSubmit .nav-list li a, .footer-Menu li a, .goals-list, #old-web, #hobbies-list, #bar, #warning, details, .blog-post li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*=================================================================Headers=================================================================*/
+h1 {
+    font-family: Lobster;
+    font-size: 50px;
+    color: #F9FAF4;
+}
+
+h1.home {
+    color: #68a9af;
+}
+
+h2 {
+    font-size: 22px;
+    color: #F17A7E;
+}
+
+h2.blog {
+    color: #080806;
+}
+
+h3 {
+    font-size: 20px;
+    color: #FFC94B;
+}
+
+/*======================================================Text for Paragraphs, lists================================================*/
+p, .p-summary, .p-summary2, .p-summary3, .goals-list, #hobbies-list, .blog-post li, .read-me {
+    font-size: 18px;
+    color: rgb(14, 15, 78);
+}
+
+/*======================================================Text for home page (link to pic)================================================*/
+#old-web {
+    color: #68a9af;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/*==================================================================Forms and Buttons ============================================================*/
+.buttonSubmit {
+    font-size: 20px;
+    border-radius: 10px;
+    border: #F17A7E;
+    background-color: #FFC94B;
+    color: #F9FAF4;
+    margin: 10px;
+    padding: 10px 30px 10px 30px;
+}
+
+.editButton {
+    float: right;
+    font-size: 20px;
+    border: #68a9af;
+    border-radius: 10px;
+    background-color: #F9FAF4;
+    color:  #68a9af;
+    margin: 5px;
+    padding: 5px;
+}
+#button {
+    float: right;
+}
+
+.createForm {
+    background-color: #f1e5d7;
+width: 50%;
+    padding: 10px 0 10px 10px;
+    margin: 0 25% 5px 25%;
+    border-radius: 10%;
+}
+
+.qriteria {
+ margin:5%;
+    font-size: 18px;
+    color: #F17A7E;
+    font-style: oblique;
+    font-family: Lobster;
+}
+
+.formH3 {
+    padding: 5% 30% 0 25%;
+    font-size: 30px;
+    color: #FFC94B;
+    font-family: Lobster
+}
+
+
+.error-Message {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+
+.is-invalid {
+    border: orangered solid 2px;
+}
+
+.inputField {
+    border-radius: 15px 15px 15px 15px;
+}
+
+
+/*========================================================Text for dashboard=============================================================*/
+/*==========================================================Bars + text=================================================================*/
+#bar, #warning {
+    font-size: 22px;
+    padding: 1%;
+}
+
+#bar {
+    color: rgb(14, 15, 78);;
+}
+
+#warning {
+    color: #aa1515;
+    float: right;
+}
+
+.prog-bar {
+    background-color: #f3ecb1;
+    border-radius: 10px;
+    border: 2px solid #FFC94B;
+}
+
+/*=========================================================Tables settings============================================================*/
+table.dashboard-table-quartile {
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 0 30px #F17A7E;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: #F17A7E;
+    width: 100%;
+}
+
+.dashboard-table-quartile thead tr, .dashboard-header-table {
+    text-align: Center;
+    font-family: Lobster;
+    color: #F9FAF4;
+}
+
+.dashboard-table-quartile thead tr {
+    background-color: #FFC94B;
+    font-size: 22px;
+}
+
+.dashboard-header-table {
+    background-color: #F17A7E;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dashboard-table-quartile td {
+    padding: 12px 20px;
+    width: 20%;
+}
+
+.dashboard-table-quartile tbody td {
+    background-color: #F9FAF4;
+    color: #0a0a0a;
+    text-align: Center;
+    font-size: 15px;
+    border-right: 1px solid #FFC94B;
+    border-bottom: 1px solid #FFC94B;
+    font-family: sans-serif;
+}
+
+.not-graded {
+    background-color: #dbdbd7 !important;
+}
+
+.passed {
+    background-color: #b1e2a0 !important;
+}
+
+.failed {
+    background-color: #ec5752 !important;
+}
+
+/*=========================================================Text for FAQ================================================================ */
+details, .p-summary, .p-summary2, .p-summary3 {
+    border-radius: 10%;
+}
+
+details {
+    font-size: 20px;
+    color: #F9FAF4;
+    text-align: center;
+    box-shadow: 0 0 30px #eeece0;
+    background-color: #ddd8a6;
+    font-weight: bold;
+    cursor: default;
+    margin-bottom: 2rem;
+    padding: .5rem 1rem;
+}
+
+.p-summary, .p-summary2, .p-summary3 {
+    padding: 1% 10% 6% 10%;
+    font-weight: lighter;
+    box-shadow: 0 0 20px #ece8dc;
+
+}
+
+.p-summary {
+    background-color: #F17A7E;
+}
+
+.p-summary2 {
+    background-color: #a8e3f1;
+}
+
+.p-summary3 {
+    background-color: #FFC94B;
+}
+
+/*========================================================Text for Blog================================================================= */
+h2.blog, p.blog-pos1, p.blog-pos2, p.blog-pos3 {
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2.blog {
+    background-color: #f7eeda;
+    font-weight: lighter;
+    width: 62%;
+    margin: 1% 30% 0 20%;
+}
+
+p.blog-pos1, p.blog-pos2, p.blog-pos3 {
+    padding: 20px;
+    border-bottom: 2px groove #2f4044;
+    width: 60%;
+    margin: 0 20% 0 20%;
+}
+
+p.blog-pos1 {
+    background-color: #a8e3f1;
+}
+
+p.blog-pos2 {
+    background-color: #F17A7E;
+}
+
+p.blog-pos3 {
+    background-color: #FFC94B;
+}
+
+.blog-article {
+    margin-left: 25%;
+    margin-right: 25%;;
+}
+
+/*------------------------------------------------Grids and pictures (divided by page)----------------------------------------------------------*/
+/*--------------------------------------------------------home page-----------------------------------------------------------------------------*/
+.grid-home-page {
+    display: grid;
+    grid-template-columns: 25% 55% 20%;
+    grid-template-areas:
+      "images content blogs";
+    grid-gap: 5px;
+}
+
+.grid-home-page > div {
+    text-align: center;
+    font-size: 30px;
+    justify-items: center;
+}
+
+.pic-border {
+    width: 300px;
+    height: auto;
+    border-radius: 10%;
+}
+
+#images {
+    grid-area: images;
+
+}
+
+.blogPosts {
+    grid-area: blogs;
+}
+
+.posts {
+    padding: 0 5px 0 5px;
+}
+
+#article {
+padding: 0 5px 0 5px;
+
+}
+
+.Main-home-page {
+    grid-area: content;
+    padding: 20px 10px 0 10px;
+}
+
+.goals-list {
+    list-style-type: none;
+}
+
+.social-media-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px 5px;
+    width: 100%;
+    grid-area: 3/2/3/2;
+}
+
+.social-media-grid > div {
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.title-social-media {
+    grid-area: 1/1/1/3;
+}
+
+#facebook, #instagram {
+    width: 50px;
+    height: 50px;
+}
+
+.facebook {
+    grid-area: 2 / 1;
+}
+
+.instagram {
+    grid-area: 2 / 2;
+}
+
+.old-web {
+    grid-area: 3/3;
+}
+
+/*--------------------------------------------------------Profile Page-------------------------------------------------------------------------*/
+
+.grid-profile {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.grid-profile > div {
+    text-align: center;
+    font-size: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.Main-grid-profile {
+    grid-area: 1 / 2 / 4;
+    padding: 10px 10px 10px 10px;
+}
+
+#couple-pic, #army-pic, #hobbies-pic {
+    border-radius: 10%;
+    width: 400px;
+    height: auto;
+}
+
+#family-pic, #cactus-pic, #nephews-pic {
+    border-radius: 10%;
+    width: auto;
+    height: 300px;
+}
+
+.couple-pic {
+    grid-area: 1 / 1;
+}
+
+.family-pic {
+    grid-area: 3/3;
+}
+
+.cactus-pic {
+    grid-area: 2/1;
+}
+
+#cactus-pic {
+    padding-top: 100px;
+}
+
+.army-pic {
+    grid-area: 1/3;
+}
+
+#army-pic {
+    padding-top: 200px;
+}
+
+.nephews-pic {
+    grid-area: 4/ 1/4/4;
+    justify-items: center;
+}
+
+.hobbies-pic {
+    grid-area: 2/3;
+}
+
+.inner-grid-hobbies {
+    display: grid;
+    grid: 30% 60%;
+}
+
+#hobbies-list {
+    grid-area: 1/1/2/2;
+    list-style-type: none;
+}
+
+.par-hobbies {
+    grid-area: 2/1/3/2;
+}
+
+/*--------------------------------------------------------Dashboard page------------------------------------------------------------------------*/
+#tables {
+    padding: 20px 10% 0 10%;
+}
+
+#credits {
+    height: 40px;
+    width: 1000px;
+}
+
+/*--------------------------------------------------------FAQ page-----------------------------------------------------------------------------*/
+.grid-faq {
+    display: grid;
+    column-gap: 10px;
+    padding: 0 0 0 5%;
+}
+
+.grid-faq > div {
+    text-align: center;
+    font-size: 30px;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    align-items: center;
+    justify-items: center;
+}
+
+#all-q {
+    padding-top: 5%;
+    grid-area: 1/2/6/2;
+}
+
+summary {
+    cursor: pointer;
+}
+
+#apple-pic, #pineapple-pic, #orange-pic, #peach-pic, #strawberry-pic, #pear-pic {
+    height: auto;
+    border-radius: 10%;
+}
+
+#pineapple-pic, #orange-pic, #strawberry-pic, #apple-pic {
+    width: 200px;
+}
+
+.apple-pic {
+    grid-area: 1/1;
+}
+
+.pineapple-pic {
+    grid-area: 1/3;
+}
+
+.orange-pic {
+    grid-area: 3/1;
+}
+
+.peach-pic {
+    grid-area: 3/3;
+}
+
+#peach-pic {
+    width: 300px;
+}
+
+.strawberry-pic {
+    grid-area: 5/1;
+}
+
+.pear-pic {
+    grid-area: 5/3;
+}
+
+#pear-pic {
+    width: 120px;
+}
+
+/*--------------------------------------------------------Blog post page------------------------------------------------------------------------*/
+/* -------------------------------------------------ICT-Field of Work Blog Post----------------------------------------------------------------*/
+
+.grid-ict, .grid-ict2 {
+    display: grid;
+    grid-gap: 30px;
+
+}
+
+.grid-ict {
+    grid-template-columns: 25% 20% 55%;
+    grid-template-areas:
+      "hackeronePos space hackerone";
+}
+
+.grid-ict2 {
+    grid-template-columns: 55% 20% 25%;
+    grid-template-areas:
+    "atos space posatos";
+}
+
+.hackerone-pos {
+    grid-area: hackerone;
+    padding-left: 20px;
+
+}
+
+.hackerone-poster-pos {
+    grid-area: hackeronePos;
+    margin-right: 10px;
+}
+
+.hackerone-poster-pos:hover, .atos-poster-pos:hover {
+    transform: scale(2);
+}
+
+.hackerone-poster-pos:hover {
+    padding: 20% 0 0 20%;
+}
+
+.atos-pos {
+    grid-area: atos;
+}
+
+.atos-poster-pos {
+    grid-area: posatos;
+}
+
+.atos-poster-pos:hover {
+    padding: 0 20% 20% 0;
+}
+
+/*error pages*/
+.grid-error-page {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "image content";
+    grid-gap: 5px;
+}
+
+.grid-error-page > div {
+    text-align: center;
+    font-size: 30px;
+    justify-items: center;
+}
+
+#image {
+    grid-area: image;
+    width: 100%;
+}
+
+.Main-error-page {
+    grid-area: content;
+    padding: 20px 10px 0 10px;
+}
+
+.error500 {
+    width:70%;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
+.error-container {
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 800;
+    margin: 70px 15px;
+}
+.error-container > span {
+    display: inline-block;
+    position: relative;
+}
+.error-container > span.four {
+    width: 136px;
+    height: 43px;
+    border-radius: 999px;
+    background:
+        linear-gradient(140deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 43%, transparent 44%, transparent 100%),
+        linear-gradient(105deg, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.06) 41%, rgba(0, 0, 0, 0.07) 76%, transparent 77%, transparent 100%),
+        linear-gradient(to right, #d89ca4, #e27b7e);
+}
+.error-container > span.four:before,
+.error-container > span.four:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 999px;
+}
+.error-container > span.four:before {
+    width: 43px;
+    height: 156px;
+    left: 60px;
+    bottom: -43px;
+    background:
+        linear-gradient(128deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 40%, transparent 41%, transparent 100%),
+        linear-gradient(116deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 50%, transparent 51%, transparent 100%),
+        linear-gradient(to top, #99749D, #B895AB, #CC9AA6, #D7969E, #E0787F);
+}
+.error-container > span.four:after {
+    width: 137px;
+    height: 43px;
+    transform: rotate(-49.5deg);
+    left: -18px;
+    bottom: 36px;
+    background: linear-gradient(to right, #99749D, #B895AB, #CC9AA6, #D7969E, #E0787F);
+}
+
+.error-container > span.zero {
+    vertical-align: text-top;
+    width: 156px;
+    height: 156px;
+    border-radius: 999px;
+    background: linear-gradient(-45deg, transparent 0%, rgba(0, 0, 0, 0.06) 50%,  transparent 51%, transparent 100%),
+    linear-gradient(to top right, #99749D, #99749D, #B895AB, #CC9AA6, #D7969E, #ED8687, #ED8687);
+    overflow: hidden;
+    animation: bgshadow 5s infinite;
+}
+.error-container > span.zero:before {
+    content: '';
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 90px;
+    height: 90px;
+    background-color: transparent;
+    left: 0px;
+    bottom: 0px;
+    background:
+        linear-gradient(95deg, transparent 0%, transparent 8%, rgba(0, 0, 0, 0.07) 9%, transparent 50%, transparent 100%),
+        linear-gradient(85deg, transparent 0%, transparent 19%, rgba(0, 0, 0, 0.05) 20%, rgba(0, 0, 0, 0.07) 91%, transparent 92%, transparent 100%);
+}
+.error-container > span.zero:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 999px;
+    width: 70px;
+    height: 70px;
+    left: 43px;
+    bottom: 43px;
+    background: #FDFAF5;
+    box-shadow: -2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.screen-reader-text {
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+}
+
+@keyframes bgshadow {
+    0% {
+        box-shadow: inset -160px 160px 0px 5px rgba(0, 0, 0, 0.4);
+    }
+    45% {
+        box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    }
+    55% {
+        box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: inset 160px -160px 0px 5px rgba(0, 0, 0, 0.4);
+    }
+}
+

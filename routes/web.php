@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{GradeController, CourseController,
+    ProfileController,WelcomeController,FaqController,ArticleController};
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +16,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/posts/{post}', function ($post) {
-    $posts = [
-        'my-first-post' => 'Hello, this is my first blog post!',
-        'my-second-post' => 'Now I am getting the hang of this blogging thing.'
-    ];
+//Welcome
+Route::get('/', [WelcomeController::class, 'index']);
 
-    if (!array_key_exists($post, $posts)) {
-        abort(404, 'Sorry, that post was not found.');
-    }
+//Profile
+Route::get('/profile', [ProfileController::class, 'index']);
 
-    return view('post', [
-        'post' => $posts[$post]
-    ]);
+//faqs
+Route::resource('/faq', FaqController::class);
+
+//articles
+Route::resource('/article', ArticleController::class);
+
+//grades
+Route::resource('/grade', GradeController::class);
+
+//courses
+Route::resource('/course', CourseController::class);
+
+//Test
+Route::get('/test', function(){
+    return view('test');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//500 error temp
+Route::get('servererror', function () {
+    abort(500);
+})->name('servererror');
+
